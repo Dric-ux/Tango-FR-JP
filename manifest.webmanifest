@@ -1,0 +1,16 @@
+{
+  "name": "Tango : vocabulaire français japonais",
+  "short_name": "Tango",
+  "description": "Cartes de vocabulaire français japonais avec répétition espacée, utilisables hors ligne.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf7f2",
+  "theme_color": "#c8402f",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
