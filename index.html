@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8402f">
+<title>Tango : vocabulaire français japonais</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#faf7f2; --card:#ffffff; --ink:#1f2430; --muted:#656b78; --line:#e7e0d4;
+  --accent:#c8402f; --accent-ink:#ffffff; --accent-soft:#f8e4df;
+  --again:#c8402f; --hard:#b9731a; --good:#2f7d4f; --easy:#2d6aa8;
+  --shadow:0 6px 24px rgba(31,36,48,.08);
+  --jpfont:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14161b; --card:#1e2128; --ink:#eceef2; --muted:#9aa1ae; --line:#2e323c;
+    --accent:#e0614f; --accent-ink:#1a0d0a; --accent-soft:#3a2420;
+    --again:#e0614f; --hard:#d49040; --good:#4fae78; --easy:#5a9ad8;
+    --shadow:0 6px 24px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.45}
+body{min-height:100dvh}
+button,input,select,textarea{font:inherit;color:inherit}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:15px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:650}
+p{margin:0 0 10px}
+.jp,.jp-title,.i-jp{font-family:var(--jpfont)}
+.jp-title{color:var(--accent);font-weight:500;margin-left:6px}
+.ja{font-family:var(--jpfont);font-weight:400;opacity:.8;margin-right:.45em;font-size:.92em}
+.rate .ja,button.primary .ja,.sec .ja{display:block;margin:0 0 1px;font-size:.8em}
+.hint .ja{display:block;margin:0 0 6px;opacity:1}
+.warn{background:var(--accent-soft);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:10px}
+.warn ul{margin:6px 0 0;padding-left:18px}
+#banner{background:#fff3cd;color:#5c4400;padding:8px 14px;font-size:13px;text-align:center}
+@media (prefers-color-scheme:dark){#banner{background:#4a3a0a;color:#ffe9a8}}
+main{max-width:640px;margin:0 auto;padding:18px 16px calc(92px + env(safe-area-inset-bottom))}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stats div{background:var(--bg);border-radius:12px;padding:10px 6px;text-align:center}
+.stats b{display:block;font-size:26px;line-height:1.1}
+.stats span{font-size:12px;color:var(--muted)}
+label{display:block;font-size:13px;color:var(--muted);margin:12px 0 4px;font-weight:600}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;min-height:46px}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg button{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:11px 4px;cursor:pointer;font-size:14px}
+.seg button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650}
+button.primary{width:100%;border:0;background:var(--accent);color:var(--accent-ink);border-radius:14px;padding:15px;font-weight:700;font-size:17px;cursor:pointer;margin-top:14px}
+button.primary:active{filter:brightness(.92)}
+button.primary[disabled]{opacity:.45}
+.sec{display:block;text-align:center;text-decoration:none;color:var(--ink);width:100%;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:13px;font-weight:600;cursor:pointer;margin-top:10px}
+button.danger{border-color:var(--again);color:var(--again)}
+button.link{background:none;border:0;color:var(--accent);padding:12px;width:100%;cursor:pointer;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px}
+.chips span,.tag{background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:3px 10px;font-size:12px}
+.themes{display:flex;flex-wrap:wrap;gap:8px}
+.themes button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:14px}
+.themes button small{color:var(--muted);margin-left:4px}
+.themes button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650}
+.themes button.on small{color:inherit;opacity:.85}
+.pic,.i-pic{font-family:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif}
+.pic{font-size:64px;line-height:1.15;margin:0 0 6px}
+.i-pic{font-size:30px;line-height:1;flex:0 0 auto}
+.empty{text-align:center;color:var(--muted);padding:24px 8px}
+.item{display:flex;gap:10px;align-items:center;width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:8px 0}
+.i-text{flex:1;min-width:0;display:block;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.i-act{display:flex;flex-direction:column;gap:6px}
+.i-act button{background:var(--accent-soft);border:0;border-radius:999px;padding:6px 11px;font-size:13px;cursor:pointer;white-space:nowrap}
+.i-main{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.i-fr{font-weight:650}
+.i-jp{font-size:18px;text-align:right;flex:0 0 auto;max-width:55%;overflow-wrap:anywhere}
+.i-fr{min-width:0;overflow-wrap:anywhere}
+.i-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.hint{font-size:13px;color:var(--muted)}
+.count{font-size:13px;color:var(--muted);margin:8px 2px}
+.switch{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}
+.switch input{width:auto;min-height:0;transform:scale(1.4)}
+#nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
+#nav button{background:none;border:0;padding:9px 0 8px;font-size:12px;color:var(--muted);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+#nav button span:first-child{font-size:22px;line-height:1}
+#nav .ja{display:block;margin:0;font-size:11px;opacity:.9}
+#nav button.on{color:var(--accent);font-weight:700}
+/* Révision plein écran */
+#study{position:fixed;inset:0;background:var(--bg);z-index:40;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+#study[hidden]{display:none}
+.s-top{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.s-top button{background:none;border:0;font-size:24px;cursor:pointer;padding:4px 8px;color:var(--muted)}
+.bar{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--good);width:0;transition:width .25s}
+.s-rem{font-size:13px;color:var(--muted);min-width:56px;text-align:right}
+.s-body{flex:1;display:flex;align-items:center;justify-content:center;padding:8px 16px;overflow:auto}
+.s-card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px 18px;text-align:center;cursor:pointer;min-height:240px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.s-card>*{max-width:100%}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.fr-big{font-size:30px;font-weight:650;line-height:1.25;overflow-wrap:anywhere}
+.s-card .jp{font-size:clamp(36px,12vw,52px);line-height:1.25;overflow-wrap:anywhere}
+.reading{font-family:var(--jpfont);font-size:22px;color:var(--accent);margin-top:4px}
+.romaji{font-size:18px;color:var(--muted);margin-top:2px}
+.note{margin-top:12px;font-size:14px;color:var(--muted);font-style:italic}
+.s-card hr{border:0;border-top:1px dashed var(--line);margin:18px 0;width:100%}
+.speak{margin-top:10px;background:var(--accent-soft);border:0;border-radius:999px;width:46px;height:46px;font-size:20px;cursor:pointer}
+.s-foot{padding:12px 14px calc(14px + env(safe-area-inset-bottom))}
+.rates{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rate{border:2px solid;border-radius:14px;background:var(--card);padding:10px 2px;cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:center}
+.rate b{font-size:14px}
+.rate small{font-size:12px;color:var(--muted)}
+.rate.again{border-color:var(--again)}.rate.hard{border-color:var(--hard)}.rate.good{border-color:var(--good)}.rate.easy{border-color:var(--easy)}
+.end{text-align:center;padding:20px}
+.end .big{font-size:56px}
+/* Fenêtres */
+#modal{position:fixed;inset:0;background:rgba(10,12,16,.55);z-index:60;display:flex;align-items:flex-end;justify-content:center}
+#modal[hidden]{display:none}
+.sheet{background:var(--bg);width:100%;max-width:640px;max-height:92dvh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}
+#toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:.2s;z-index:80;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div id="banner" hidden></div>
+<main id="view"></main>
+<nav id="nav" aria-label="Navigation">
+  <button data-act="tab" data-tab="home"><span>🎴</span><span class="ja">復習</span>Réviser</button>
+  <button data-act="tab" data-tab="add"><span>➕</span><span class="ja">追加</span>Ajouter</button>
+  <button data-act="tab" data-tab="lib"><span>📚</span><span class="ja">単語</span>Mots</button>
+  <button data-act="tab" data-tab="more"><span>⚙️</span><span class="ja">設定</span>Plus</button>
+</nav>
+<div id="study" hidden></div>
+<div id="modal" hidden></div>
+<div id="toast" role="status"></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- Constantes ---------- */
+const TYPES = ['nom','verbe','adjectif','adverbe','expression','autre'];
+const TYPE_LABEL = {nom:'Nom', verbe:'Verbe', adjectif:'Adjectif', adverbe:'Adverbe', expression:'Expression', autre:'Autre'};
+const TYPE_JA = {nom:'名詞', verbe:'動詞', adjectif:'形容詞', adverbe:'副詞', expression:'表現', autre:'その他'};
+const KEY = 'tango.v1';
+const MIN = 60000, HOUR = 3600000, DAY = 86400000;
+const NO_THEME = 'Sans thème';
+const THEME_JA = {
+  'nourriture': '食べ物', 'boissons': '飲み物', 'boisson': '飲み物', 'fruits': '果物', 'legumes': '野菜', 'viande': '肉', 'poisson': '魚', 'cuisine': '料理',
+  'voyage': '旅行', 'transport': '交通', 'transports': '交通', 'ville': '町', 'maison': '家', 'famille': '家族', 'corps': '体', 'corps humain': '体',
+  'vetements': '服', 'couleurs': '色', 'nombres': '数字', 'chiffres': '数字', 'temps': '時間', 'meteo': '天気', 'salutations': 'あいさつ',
+  'animaux': '動物', 'nature': '自然', 'travail': '仕事', 'metiers': '職業', 'ecole': '学校', 'etudes': '勉強', 'sante': '健康', 'loisirs': '趣味',
+  'sport': 'スポーツ', 'musique': '音楽', 'argent': 'お金', 'emotions': '感情', 'sentiments': '気持ち', 'verbes': '動詞', 'verbes courants': 'よく使う動詞',
+  'adjectifs': '形容詞', 'adjectifs de base': '基本の形容詞', 'adverbes': '副詞', 'expressions': '表現', 'restaurant': 'レストラン', 'courses': '買い物',
+  'shopping': '買い物', 'hotel': 'ホテル', 'directions': '道案内', 'lieux': '場所', 'objets': '物', 'pays': '国', 'jours': '曜日', 'mois': '月',
+  'calendrier': 'カレンダー', 'heure': '時刻', 'technologie': '技術', 'internet': 'インターネット', 'culture': '文化', 'quotidien': '日常',
+  'vie quotidienne': '日常生活', 'conversation': '会話', 'questions': '質問', 'phrases utiles': '便利なフレーズ', 'divers': 'その他', 'autre': 'その他', 'sans theme': 'テーマなし'
+};
+
+const STARTER = [
+  ['Bonjour','こんにちは','','Salutations','expression'],
+  ['Bonsoir','こんばんは','','Salutations','expression'],
+  ['Bonjour (le matin)','おはよう','','Salutations','expression'],
+  ['Merci','ありがとう','','Salutations','expression'],
+  ["S'il vous plaît",'お願いします','おねがいします','Salutations','expression'],
+  ['Excusez-moi','すみません','','Salutations','expression'],
+  ['Au revoir','さようなら','','Salutations','expression'],
+  ['Oui','はい','','Salutations','expression'],
+  ['Non','いいえ','','Salutations','expression'],
+  ['eau','水','みず','Nourriture','nom'],
+  ['riz cuit, repas','ご飯','ごはん','Nourriture','nom'],
+  ['pain','パン','','Nourriture','nom'],
+  ['poisson','魚','さかな','Nourriture','nom'],
+  ['viande','肉','にく','Nourriture','nom'],
+  ['thé','お茶','おちゃ','Nourriture','nom'],
+  ['pomme','りんご','','Nourriture','nom'],
+  ['un','一','いち','Nombres','autre'],
+  ['deux','二','に','Nombres','autre'],
+  ['trois','三','さん','Nombres','autre'],
+  ['quatre','四','よん','Nombres','autre'],
+  ['cinq','五','ご','Nombres','autre'],
+  ['manger','食べる','たべる','Verbes courants','verbe'],
+  ['boire','飲む','のむ','Verbes courants','verbe'],
+  ['aller','行く','いく','Verbes courants','verbe'],
+  ['venir','来る','くる','Verbes courants','verbe'],
+  ['voir, regarder','見る','みる','Verbes courants','verbe'],
+  ['faire','する','','Verbes courants','verbe'],
+  ['grand','大きい','おおきい','Adjectifs de base','adjectif'],
+  ['petit','小さい','ちいさい','Adjectifs de base','adjectif'],
+  ['délicieux, bon (au goût)','おいしい','','Adjectifs de base','adjectif'],
+  ['nouveau','新しい','あたらしい','Adjectifs de base','adjectif'],
+  ['très','とても','','Adverbes','adverbe'],
+  ['un peu','少し','すこし','Adverbes','adverbe'],
+  ['beaucoup','たくさん','','Adverbes','adverbe']
+];
+
+/* ---------- Utilitaires ---------- */
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ja = (t) => `<span class="ja">${t}</span>`;
+const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+const num = (v, d) => { v = Number(v); return Number.isFinite(v) ? v : d; };
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const endOfToday = () => { const d = new Date(); d.setHours(23, 59, 59, 999); return d.getTime(); };
+let isPreview = false;
+try { isPreview = window.self !== window.top; } catch (e) { isPreview = true; }
+
+/* ---------- Romaji (hiragana et katakana vers lettres latines) ---------- */
+const BASE = {
+ 'あ':'a','い':'i','う':'u','え':'e','お':'o','か':'ka','き':'ki','く':'ku','け':'ke','こ':'ko',
+ 'さ':'sa','し':'shi','す':'su','せ':'se','そ':'so','た':'ta','ち':'chi','つ':'tsu','て':'te','と':'to',
+ 'な':'na','に':'ni','ぬ':'nu','ね':'ne','の':'no','は':'ha','ひ':'hi','ふ':'fu','へ':'he','ほ':'ho',
+ 'ま':'ma','み':'mi','む':'mu','め':'me','も':'mo','や':'ya','ゆ':'yu','よ':'yo',
+ 'ら':'ra','り':'ri','る':'ru','れ':'re','ろ':'ro','わ':'wa','を':'wo','ん':'n',
+ 'が':'ga','ぎ':'gi','ぐ':'gu','げ':'ge','ご':'go','ざ':'za','じ':'ji','ず':'zu','ぜ':'ze','ぞ':'zo',
+ 'だ':'da','ぢ':'ji','づ':'zu','で':'de','ど':'do','ば':'ba','び':'bi','ぶ':'bu','べ':'be','ぼ':'bo',
+ 'ぱ':'pa','ぴ':'pi','ぷ':'pu','ぺ':'pe','ぽ':'po','ゔ':'vu',
+ 'ぁ':'a','ぃ':'i','ぅ':'u','ぇ':'e','ぉ':'o'
+};
+const SMALL_Y = {'ゃ':'a','ゅ':'u','ょ':'o'};
+const WORD_EXCEPTIONS = {'こんにちは':'konnichiwa','こんばんは':'konbanwa'};
+const toHira = (s) => s.replace(/[ァ-ヶ]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0x60));
+const isKana = (s) => /^[ぁ-ゖァ-ヺー\s・]+$/.test(s || '');
+const isLatin = (s) => /^[\x20-\x7EÀ-ſ]+$/.test(s || '');
+function romaji(src) {
+  const s = toHira(String(src).trim());
+  if (WORD_EXCEPTIONS[s]) return WORD_EXCEPTIONS[s];
+  let out = '', i = 0, sokuon = false, prevN = false;
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === 'っ') { sokuon = true; i++; continue; }
+    if (ch === 'ー') { const m = out.match(/[aiueo]$/); if (m) out += m[0]; i++; continue; }
+    if (ch === ' ' || ch === '　' || ch === '・') { out += ' '; i++; prevN = false; continue; }
+    let syl = BASE[ch];
+    if (syl === undefined) { out += ch; i++; continue; }
+    let adv = 1;
+    const nx = s[i + 1];
+    if (nx && SMALL_Y[nx] && syl.length > 1 && syl.endsWith('i')) {
+      const v = SMALL_Y[nx];
+      if (syl === 'shi') syl = 'sh' + v; else if (syl === 'chi') syl = 'ch' + v; else if (syl === 'ji') syl = 'j' + v;
+      else syl = syl.slice(0, -1) + 'y' + v;
+      adv = 2;
+    }
+    if (prevN && /^[aiueoy]/.test(syl)) out += "'";
+    if (sokuon) { syl = (syl.startsWith('ch') ? 't' : syl[0]) + syl; sokuon = false; }
+    out += syl; prevN = (syl === 'n'); i += adv;
+  }
+  return out;
+}
+const hasKanji = (s) => /[㐀-䶿一-鿿々]/.test(s || '');
+function hiraOf(c) {
+  if (c.reading && !isLatin(c.reading)) return toHira(c.reading.trim());
+  return isKana(c.jp) ? toHira(c.jp.trim()) : '';
+}
+const needsHira = (jp, reading) => hasKanji(jp) && !(reading && !isLatin(reading));
+function kanaLine(c) { const h = hiraOf(c); return h && h !== c.jp.trim() ? h : ''; }
+function romajiLine(c) {
+  if (!db.settings.romaji) return '';
+  if (c.reading) return isLatin(c.reading) ? c.reading : (isKana(c.reading) ? romaji(c.reading) : '');
+  return isKana(c.jp) ? romaji(c.jp) : '';
+}
+function readingLines(c) {
+  const k = kanaLine(c), r = romajiLine(c);
+  return (k ? `<div class="reading">${esc(k)}</div>` : '') + (r ? `<div class="romaji">${esc(r)}</div>` : '');
+}
+
+/* ---------- Données et sauvegarde ---------- */
+let storageOK = true;
+let EMOJI_RE; try { EMOJI_RE = new RegExp('\\p{Extended_Pictographic}|\\p{Regional_Indicator}', 'u'); } catch (e) { EMOJI_RE = /[^\x00-\x7f]/; }
+function cleanImg(v) {
+  const t = String(v || '').replace(/\s+/g, '');
+  if (!t || !EMOJI_RE.test(t)) return '';
+  let parts = [t];
+  try { if (window.Intl && Intl.Segmenter) parts = Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(t), (x) => x.segment); } catch (e) {}
+  return parts.filter((x) => EMOJI_RE.test(x)).slice(0, 3).join('');
+}
+const srsNew = () => ({ ease: 2.5, ivl: 0, due: 0, reps: 0, lapses: 0, lrn: false });
+function sanitizeCard(c) {
+  if (!c || typeof c !== 'object') return null;
+  const fr = String(c.fr || '').trim(), jp = String(c.jp || '').trim();
+  if (!fr || !jp) return null;
+  const clean = (s) => ({ ease: num(s && s.ease, 2.5), ivl: num(s && s.ivl, 0), due: num(s && s.due, 0), reps: num(s && s.reps, 0), lapses: num(s && s.lapses, 0), lrn: !!(s && s.lrn) });
+  const srs = c.srs || {};
+  return { id: String(c.id || uid()), fr, jp, reading: String(c.reading || '').trim(), theme: String(c.theme || '').trim() || NO_THEME,
+    type: TYPES.includes(c.type) ? c.type : 'autre', note: String(c.note || '').trim(), img: cleanImg(c.img), created: num(c.created, Date.now()), srs: { a: clean(srs.a), b: clean(srs.b) } };
+}
+function defaults() {
+  return { v: 1, themeJa: {}, cards: [], settings: { newPerSession: 10, romaji: false, readingFront: true, images: true, imageFront: false }, ui: { themes: [], types: [], dir: 'both', lastTheme: '', lastType: 'nom' } };
+}
+function loadDB() {
+  const d = defaults();
+  try {
+    localStorage.setItem(KEY + '.probe', '1'); localStorage.removeItem(KEY + '.probe');
+    const raw = localStorage.getItem(KEY);
+    if (raw) {
+      const o = JSON.parse(raw);
+      d.cards = (o.cards || []).map(sanitizeCard).filter(Boolean);
+      Object.assign(d.settings, o.settings || {});
+      if (o.themeJa && typeof o.themeJa === 'object') for (const k in o.themeJa) if (typeof o.themeJa[k] === 'string' && o.themeJa[k].trim()) d.themeJa[k] = o.themeJa[k].trim();
+      Object.assign(d.ui, o.ui || {});
+      const u = o.ui || {};
+      if (!Array.isArray(u.themes)) d.ui.themes = u.theme ? [String(u.theme)] : [];
+      if (!Array.isArray(u.types)) d.ui.types = u.type ? [String(u.type)] : [];
+      d.ui.themes = d.ui.themes.map(String); d.ui.types = d.ui.types.map(String);
+      delete d.ui.theme; delete d.ui.type;
+    }
+  } catch (e) { storageOK = false; }
+  return d;
+}
+let db = loadDB();
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) { if (storageOK) { storageOK = false; updateBanner(); } }
+}
+try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {}
+
+const byId = (id) => db.cards.find((c) => c.id === id);
+const themes = () => [...new Set(db.cards.map((c) => c.theme).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+const keyOf = (fr, jp) => norm(fr) + '|' + String(jp).trim();
+function newCard(o) {
+  return sanitizeCard({ id: uid(), fr: o.fr, jp: o.jp, reading: o.reading, theme: o.theme, type: o.type, note: o.note, img: o.img, created: Date.now() });
+}
+function setImg(fr, jp, img) {
+  const c = db.cards.find((x) => keyOf(x.fr, x.jp) === keyOf(fr, jp)), v = cleanImg(img);
+  if (!c || !v || c.img) return false;
+  c.img = v; return true;
+}
+function addMany(items) {
+  const seen = new Set(db.cards.map((c) => keyOf(c.fr, c.jp)));
+  let added = 0, skipped = 0;
+  for (const it of items) {
+    const k = keyOf(it.fr, it.jp);
+    if (seen.has(k)) { skipped++; continue; }
+    const c = newCard(it); if (!c) { skipped++; continue; }
+    seen.add(k); db.cards.push(c); added++;
+  }
+  save();
+  return { added, skipped };
+}
+function normType(t, def) {
+  const n = norm(t); if (!n) return def;
+  for (const k of TYPES) if (n.startsWith(k)) return k;
+  return 'autre';
+}
+
+/* ---------- Répétition espacée (inspirée d'Anki) ---------- */
+const phase = (s) => (s.lrn ? 'lrn' : (s.reps === 0 ? 'new' : 'rev'));
+function schedule(s, q, now) {
+  const n = Object.assign({}, s);
+  const p = phase(s);
+  if (p === 'new' || p === 'lrn') {
+    if (q === 0) { n.lrn = true; n.due = now + 1 * MIN; }
+    else if (q === 1) { n.lrn = true; n.due = now + 6 * MIN; }
+    else {
+      const g = q === 2 ? (s.ivl > 0 ? s.ivl : 1) : (s.ivl > 0 ? Math.round(s.ivl * 1.5) + 1 : 4);
+      n.lrn = false; n.reps = s.reps + 1; n.ivl = g; n.due = now + g * DAY;
+    }
+  } else if (q === 0) {
+    n.lapses = s.lapses + 1; n.ease = Math.max(1.3, s.ease - 0.2); n.ivl = Math.max(1, Math.round(s.ivl * 0.2)); n.lrn = true; n.due = now + 10 * MIN;
+  } else {
+    let iv;
+    if (q === 1) { iv = Math.max(s.ivl + 1, Math.round(s.ivl * 1.2)); n.ease = Math.max(1.3, s.ease - 0.15); }
+    else if (q === 2) { iv = Math.max(s.ivl + 1, Math.round(s.ivl * s.ease)); }
+    else { iv = Math.max(s.ivl + 1, Math.round(s.ivl * s.ease * 1.3)); n.ease = s.ease + 0.15; }
+    n.ivl = iv; n.reps = s.reps + 1; n.due = now + iv * DAY;
+  }
+  return n;
+}
+const isDue = (s, now, end) => (s.lrn ? s.due <= now + 20 * MIN : s.due <= end);
+function fmtInt(ms) {
+  if (ms < HOUR) return Math.max(1, Math.round(ms / MIN)) + ' min';
+  if (ms < DAY) return Math.round(ms / HOUR) + ' h';
+  const d = Math.round(ms / DAY);
+  if (d < 30) return d + ' j';
+  if (d < 365) return (d / 30).toFixed(1).replace('.0', '').replace('.', ',') + ' mois';
+  return (d / 365).toFixed(1).replace('.0', '').replace('.', ',') + ' an';
+}
+const dirsOf = (d) => (d === 'a' ? ['a'] : d === 'b' ? ['b'] : ['a', 'b']);
+const themeJa = (t) => (db.themeJa && db.themeJa[t]) || THEME_JA[norm(t)] || '';
+const themeText = (t) => (themeJa(t) ? themeJa(t) + ' ' + t : t);
+const toggleIn = (a, v) => { const i = a.indexOf(v); if (i >= 0) a.splice(i, 1); else a.push(v); };
+const filtered = (f) => db.cards.filter((c) => (!f.themes.length || f.themes.includes(c.theme)) && (!f.types.length || f.types.includes(c.type)));
+function counts(f) {
+  const now = Date.now(), end = endOfToday(); let due = 0, nw = 0;
+  const cards = filtered(f);
+  for (const c of cards) for (const d of dirsOf(f.dir)) {
+    const s = c.srs[d];
+    if (phase(s) === 'new') nw++; else if (isDue(s, now, end)) due++;
+  }
+  return { due, nw: Math.min(nw, db.settings.newPerSession), total: cards.length };
+}
+function buildQueue(f, all) {
+  const now = Date.now(), end = endOfToday();
+  const dues = [], news = [], others = [];
+  for (const c of filtered(f)) for (const d of dirsOf(f.dir)) {
+    const s = c.srs[d], item = { id: c.id, d };
+    if (phase(s) === 'new') news.push(item); else if (isDue(s, now, end)) dues.push(item); else others.push(item);
+  }
+  if (all) return shuffle(dues.concat(news, others));
+  return shuffle(dues).concat(shuffle(news).slice(0, db.settings.newPerSession));
+}
+
+/* ---------- État de l'interface ---------- */
+let tab = 'home';
+let session = null;
+let libState = { q: '', theme: '', type: '' };
+let deferredInstall = null;
+const hasTTS = 'speechSynthesis' in window && typeof window.SpeechSynthesisUtterance === 'function';
+
+function toast(msg) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 2400);
+}
+function updateBanner() {
+  const b = $('#banner'); let m = '';
+  if (!storageOK) m = 'Sauvegarde automatique indisponible dans ce navigateur : exporte régulièrement tes données (onglet Plus).';
+  else if (isPreview) m = 'Mode aperçu : les données peuvent ne pas être conservées. Pour un vrai usage, installe l\'app (onglet Plus).';
+  b.hidden = !m; b.textContent = m;
+}
+function speak(text, lang) {
+  if (!hasTTS) return;
+  try {
+    const u = new SpeechSynthesisUtterance(text); u.lang = lang || 'ja-JP'; u.rate = lang === 'fr-FR' ? 0.95 : 0.85;
+    window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+  } catch (e) {}
+}
+function confirmDialog(msg, okLabel, jpMsg, jpOk) {
+  return new Promise((resolve) => {
+    openModal(`${jpMsg ? `<p class="jp" style="font-size:16px;margin-bottom:4px">${esc(jpMsg)}</p>` : ''}<p style="font-size:17px">${esc(msg)}</p><button class="primary danger-fill" data-act="dlg-yes" style="background:var(--again)">${jpOk ? ja(esc(jpOk)) : ''}${esc(okLabel || 'Confirmer')}</button><button class="sec" data-act="dlg-no">${ja('キャンセル')}Annuler</button>`);
+    confirmDialog.resolve = resolve;
+  });
+}
+function openModal(html) { const m = $('#modal'); m.innerHTML = `<div class="sheet">${html}</div>`; m.hidden = false; }
+function closeModal() { $('#modal').hidden = true; $('#modal').innerHTML = ''; }
+
+/* ---------- Vues ---------- */
+const themeOpts = (sel, all) => (all !== undefined ? `<option value="">${esc(all)}</option>` : '') + themes().map((t) => `<option value="${esc(t)}"${t === sel ? ' selected' : ''}>${esc(t)}</option>`).join('');
+const typeOpts = (sel, all) => (all !== undefined ? `<option value="">${esc(all)}</option>` : '') + TYPES.map((t) => `<option value="${t}"${t === sel ? ' selected' : ''}>${TYPE_JA[t]} ${TYPE_LABEL[t]}</option>`).join('');
+
+function homeHTML() {
+  const f = db.ui;
+  f.themes = f.themes.filter((t) => themes().includes(t));
+  const presentTypes = TYPES.filter((t) => db.cards.some((c) => c.type === t));
+  f.types = f.types.filter((t) => presentTypes.includes(t));
+  const ct = counts(f);
+  if (!db.cards.length) {
+    return `<h1>Tango <span class="jp-title">単語</span></h1>
+    <div class="panel empty"><p style="font-size:18px;color:var(--ink)">Aucun mot pour l'instant.</p>
+    <p>Ajoute tes premiers mots, ou charge une petite liste d'exemple pour essayer.</p>
+    <button class="primary" data-act="tab" data-tab="add">Ajouter des mots</button>
+    <button class="sec" data-act="starter">Charger les mots d'exemple (${STARTER.length})</button></div>`;
+  }
+  const dirBtn = (v, l) => `<button data-act="dir" data-dir="${v}" class="${f.dir === v ? 'on' : ''}">${l}</button>`;
+  const tChips = themes().map((t) => `<button data-act="toggleTheme" data-theme="${esc(t)}" class="${f.themes.includes(t) ? 'on' : ''}" aria-pressed="${f.themes.includes(t)}">${esc(themeText(t))}<small>${db.cards.filter((c) => c.theme === t).length}</small></button>`).join('');
+  const yChips = presentTypes.map((t) => `<button data-act="toggleType" data-type="${t}" class="${f.types.includes(t) ? 'on' : ''}" aria-pressed="${f.types.includes(t)}">${TYPE_JA[t]} ${TYPE_LABEL[t]}<small>${db.cards.filter((c) => c.type === t).length}</small></button>`).join('');
+  return `<h1>Tango <span class="jp-title">単語</span></h1>
+  <div class="panel">
+    <div class="stats"><div><b>${ct.due}</b><span>à réviser</span></div><div><b>${ct.nw}</b><span>nouvelles</span></div><div><b>${ct.total}</b><span>mots</span></div></div>
+    <label>${ja('テーマ（複数選択可）')}Thème (plusieurs choix possibles)</label>
+    <div class="themes">${tChips}</div>
+    <button class="link" data-act="themeJa" style="padding:6px;text-align:left">${ja('テーマの日本語名を編集')}Modifier les noms japonais des thèmes</button>
+    <label>${ja('品詞（複数選択可）')}Type (plusieurs choix possibles)</label>
+    <div class="themes">${yChips}</div>
+    <p class="hint" style="margin:8px 0 0">${ja('何も選ばなければ、すべての単語が対象です。')}Sans sélection, tous les mots sont concernés.</p>
+    ${f.themes.length || f.types.length ? `<button class="link" data-act="clearFilters" style="padding:6px">${ja('選択をすべて解除')}Tout désélectionner</button>` : ''}
+    <label>${ja('出題の向き')}Sens de révision</label>
+    <div class="seg">${dirBtn('a', 'FR → 日本語')}${dirBtn('b', '日本語 → FR')}${dirBtn('both', '両方 Les deux')}</div>
+    <button class="primary" data-act="start" ${ct.due + ct.nw === 0 ? 'disabled' : ''}>${ct.due + ct.nw === 0 ? 'Rien à réviser maintenant' : ja('開始') + 'Commencer'}</button>
+    <button class="link" data-act="startAll">Tout réviser, même les cartes pas encore dues</button>
+  </div>`;
+}
+function addHTML() {
+  const u = db.ui;
+  return `<h1>${ja('単語を追加')}Ajouter des mots</h1>
+  <datalist id="themeList">${themes().map((t) => `<option value="${esc(t)}">`).join('')}</datalist>
+  <div class="panel"><h2>${ja('1語ずつ')}Un mot</h2>
+    <label for="aFr">${ja('フランス語')}Français</label><input id="aFr" autocomplete="off" autocapitalize="none" placeholder="ex : manger">
+    <label for="aJp">${ja('日本語（漢字まじり）')}Japonais usuel, avec kanji si besoin</label><input id="aJp" lang="ja" autocomplete="off" placeholder="ex : 食べる">
+    <label for="aRd">${ja('ひらがな')}Hiragana</label><input id="aRd" lang="ja" autocomplete="off" placeholder="ex : たべる">
+    <p class="hint" style="margin:6px 0 0">${ja('漢字がある言葉には、ひらがなも必ず書いてください。')}Obligatoire dès que le japonais contient des kanji. Pour un mot écrit uniquement en hiragana ou en katakana, laisse vide.</p>
+    <div class="row"><div><label for="aTheme">${ja('テーマ')}Thème</label><input id="aTheme" list="themeList" autocomplete="off" value="${esc(u.lastTheme)}" placeholder="ex : Nourriture"></div>
+    <div><label for="aType">${ja('品詞')}Type</label><select id="aType">${typeOpts(u.lastType)}</select></div></div>
+    <label for="aNote">${ja('メモ')}Note (facultatif)</label><input id="aNote" autocomplete="off" placeholder="ex : verbe du 2e groupe">
+    <label for="aImg">${ja('画像（絵文字・任意）')}Image (emoji, facultatif)</label><input id="aImg" autocomplete="off" placeholder="ex : 🍎">
+    <button class="primary" data-act="addOne">${ja('追加する')}Ajouter ce mot</button>
+  </div>
+  <div class="panel"><h2>${ja('まとめて追加')}Plusieurs mots d'un coup</h2>
+    <p class="hint">${ja('1行に1語。「フランス語 ; 日本語 ; ひらがな ; テーマ」の順に、「;」で区切ります。例：gare ; 駅 ; えき ; Voyage　最後の列に絵文字（任意）も書けます。')}Une ligne par mot, dans cet ordre : <b>français ; japonais ; hiragana ; thème ; type ; note ; image</b>. Seuls le français et le japonais sont obligatoires, plus le hiragana quand le japonais contient des kanji. L'image est un emoji facultatif (ex : 🍎). Le séparateur peut être « ; », une virgule, une tabulation ou « | ». Les lignes qui commencent par # sont ignorées.</p>
+    <div class="row"><div><label for="bTheme">${ja('テーマ')}Thème par défaut</label><input id="bTheme" list="themeList" autocomplete="off" placeholder="ex : Voyage"></div>
+    <div><label for="bType">${ja('品詞')}Type par défaut</label><select id="bType">${typeOpts('nom')}</select></div></div>
+    <label for="bText">${ja('リスト')}Liste</label><textarea id="bText" placeholder="gare ; 駅 ; えき&#10;pain ; パン&#10;acheter ; 買う ; かう"></textarea>
+    <label for="bFile">${ja('ファイルから')}Ou charger un fichier Excel (.xlsx), .csv ou .txt</label><input id="bFile" type="file" accept=".xlsx,.csv,.txt,text/plain,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+    <div id="bMsg"></div>
+    <button class="primary" data-act="addBatch">${ja('取り込む')}Importer la liste</button>
+    <div class="row"><a class="sec" href="modele-liste.xlsx" download>${ja('ひな形（Excel）')}Modèle Excel (.xlsx)</a>
+    <button class="sec" data-act="exportTemplate">${ja('ひな形（CSV）')}Modèle CSV</button></div>
+    <button class="sec" data-act="aiPrompt">${ja('AIで補完')}Compléter avec une IA</button>
+    <div id="tplWrap" hidden><p class="hint" style="margin-top:10px">Si le fichier ne se télécharge pas (aperçu dans Claude), copie ce texte dans un fichier « modele.csv » encodé en UTF-8. Le modèle Excel, lui, n'est disponible que dans l'app hébergée ou ouverte en local.</p>
+    <textarea id="tplBox" readonly style="min-height:150px"></textarea><button class="sec" data-act="copyTpl">Copier le modèle</button></div>
+  </div>`;
+}
+function libHTML() {
+  return `<h1>Mes mots</h1>
+  <div class="panel"><input id="libQ" type="search" placeholder="Rechercher (français, japonais, note)" value="${esc(libState.q)}" autocomplete="off">
+  <div class="row" style="margin-top:10px"><select id="libTheme" aria-label="Thème">${themeOpts(libState.theme, 'Tous les thèmes')}</select>
+  <select id="libType" aria-label="Type">${typeOpts(libState.type, 'Tous les types')}</select></div>
+  <button class="sec" data-act="imgPrompt">${ja('画像をAIで補完')}Compléter les images avec une IA</button>
+  <button class="sec" data-act="exportImg">${ja('画像用に書き出す')}Exporter les mots pour ajouter des images</button></div>
+  <div id="libList"></div>`;
+}
+function status(c) {
+  const a = c.srs.a, b = c.srs.b;
+  if (a.reps === 0 && b.reps === 0 && !a.lrn && !b.lrn) return 'Nouvelle';
+  return Math.min(a.ivl, b.ivl) >= 21 ? 'Acquise' : 'En cours';
+}
+const libFiltered = () => {
+  const q = norm(libState.q);
+  return db.cards.filter((c) => (!libState.theme || c.theme === libState.theme) && (!libState.type || c.type === libState.type)
+    && (!q || norm([c.fr, c.jp, c.reading, c.note, c.theme].join(' ')).includes(q)));
+};
+function renderLibList() {
+  const list = libFiltered()
+    .sort((a, b) => a.theme.localeCompare(b.theme, 'fr') || a.created - b.created);
+  const el = $('#libList'); if (!el) return;
+  if (!db.cards.length) { el.innerHTML = '<div class="empty">Aucun mot pour l\'instant.</div>'; return; }
+  el.innerHTML = `<div class="count">${list.length} mot${list.length > 1 ? 's' : ''}</div>` + (list.map((c) => {
+    const sub = [kanaLine(c), needsHira(c.jp, c.reading) ? 'hiragana manquant' : '', c.theme, TYPE_LABEL[c.type], status(c)].filter(Boolean).join(' · ');
+    const spk = hasTTS ? `<div class="i-act"><button data-act="speak" data-text="${esc(c.jp)}" data-lang="ja-JP" aria-label="Écouter en japonais">🔊 JP</button><button data-act="speak" data-text="${esc(c.fr)}" data-lang="fr-FR" aria-label="Écouter en français">🔊 FR</button></div>` : '';
+    const pic = c.img && db.settings.images ? `<span class="i-pic">${esc(c.img)}</span>` : '';
+    return `<div class="item">${pic}<button class="i-text" data-act="edit" data-id="${esc(c.id)}"><div class="i-main"><span class="i-fr">${esc(c.fr)}</span><span class="i-jp">${esc(c.jp)}</span></div><div class="i-sub">${esc(sub)}</div></button>${spk}</div>`;
+  }).join('') || '<div class="empty">Aucun résultat.</div>');
+}
+function moreHTML() {
+  const s = db.settings;
+  const n = db.cards.length;
+  return `<h1>${ja('設定')}Plus</h1>
+  <div class="panel"><h2>${ja('基本設定')}Réglages</h2>
+    <label for="sNew">${ja('1回に出す新しいカードの数')}Nouvelles cartes par session</label><input id="sNew" type="number" min="1" max="200" value="${s.newPerSession}">
+    <div class="switch"><span>${ja('ローマ字を表示')}Afficher le romaji (lettres latines)</span><input id="sRomaji" type="checkbox" ${s.romaji ? 'checked' : ''}></div>
+    <div class="switch"><span>${ja('日本語→フランス語の面で、ひらがなを表示')}Lecture visible sur la face 日本語 → FR</span><input id="sRead" type="checkbox" ${s.readingFront ? 'checked' : ''}></div>
+    <div class="switch"><span>${ja('画像（絵文字）を表示')}Afficher les images (emoji)</span><input id="sImg" type="checkbox" ${s.images ? 'checked' : ''}></div>
+    <div class="switch"><span>${ja('問題の面にも画像を表示')}Afficher aussi l'image sur la question (sinon, sur la réponse seulement)</span><input id="sImgFront" type="checkbox" ${s.imageFront ? 'checked' : ''}></div>
+    ${deferredInstall ? `<button class="sec" data-act="install">${ja('アプリをインストール')}Installer l'application</button>` : ''}
+  </div>
+  <div class="panel"><h2>${ja('バックアップと共有')}Sauvegarde et partage</h2>
+    <p class="hint">${ja('単語と学習の進み具合は、このブラウザの中に保存されています。特に端末を変える前には、ときどきバックアップを取ってください。')}Tes mots et ta progression restent dans ce navigateur. Fais une sauvegarde de temps en temps, surtout avant de changer de téléphone.</p>
+    <button class="sec" data-act="exportJson">${ja('すべてをバックアップ（JSON）')}Sauvegarde complète (JSON)</button>
+    <button class="sec" data-act="exportCsv">${ja('共有用の単語リスト（CSV）')}Liste de mots à partager (CSV)</button>
+    <a class="sec" href="modele-liste.xlsx" download>${ja('空のひな形（Excel）')}Modèle de liste vierge (Excel)</a>
+    <button class="sec" data-act="exportTemplate">${ja('空のひな形（CSV）')}Modèle de liste vierge (CSV)</button>
+    <textarea id="exportBox" readonly placeholder="書き出した内容がここに表示されます / Le contenu exporté apparaît ici" style="margin-top:10px;min-height:90px"></textarea>
+    <button class="sec" data-act="copyExport">${ja('内容をコピー')}Copier le contenu</button>
+    <label for="impBox">${ja('バックアップから復元（JSON）')}Restaurer une sauvegarde (JSON)</label>
+    <textarea id="impBox" placeholder="バックアップの内容をここに貼り付けます / Colle ici le contenu d'une sauvegarde"></textarea>
+    <input id="impFile" type="file" accept=".json,application/json,text/plain" style="margin-top:8px">
+    <button class="sec" data-act="importJson">${ja('復元する（今ある単語と統合）')}Restaurer (fusionne avec les mots existants)</button>
+  </div>
+  <div class="panel"><h2>${ja('データ')}Données</h2>
+    <button class="sec" data-act="starter">${ja('サンプル単語を追加')}Ajouter les mots d'exemple</button>
+    <button class="sec danger" data-act="reset">${ja('すべて削除')}Tout effacer</button>
+    <p class="hint" style="margin-top:12px">${ja('登録単語数：' + n + '　バージョン1')}${n} mot${n > 1 ? 's' : ''} enregistré${n > 1 ? 's' : ''}. Version 1.</p>
+  </div>`;
+}
+function render() {
+  document.querySelectorAll('#nav button').forEach((b) => b.classList.toggle('on', b.dataset.tab === tab));
+  $('#view').innerHTML = tab === 'home' ? homeHTML() : tab === 'add' ? addHTML() : tab === 'lib' ? libHTML() : moreHTML();
+  if (tab === 'lib') renderLibList();
+  updateBanner();
+}
+
+/* ---------- Session de révision ---------- */
+function startSession(all) {
+  const q = buildQueue(db.ui, all);
+  if (!q.length) { toast('Rien à réviser avec ces filtres'); return; }
+  session = { queue: q, total: q.length, done: 0, again: 0, revealed: false };
+  $('#study').hidden = false; document.body.style.overflow = 'hidden';
+  renderStudy();
+}
+function endSession() { session = null; $('#study').hidden = true; $('#study').innerHTML = ''; document.body.style.overflow = ''; render(); }
+const speakBtn = (text, lang) => (hasTTS ? `<button class="speak" data-act="speak" data-text="${esc(text)}" data-lang="${lang}" aria-label="Écouter la prononciation">🔊</button>` : '');
+function renderStudy() {
+  const el = $('#study');
+  if (!session.queue.length) {
+    el.innerHTML = `<div class="s-top"><button data-act="quit" aria-label="Fermer">✕</button><div class="bar"><i style="width:100%"></i></div></div>
+    <div class="s-body"><div class="end"><div class="big">🎉</div><h1>Session terminée</h1><p>${session.total} carte${session.total > 1 ? 's' : ''} révisée${session.total > 1 ? 's' : ''}${session.again ? `, dont ${session.again} à revoir` : ''}.</p></div></div>
+    <div class="s-foot"><button class="primary" data-act="quit" style="margin:0">Retour</button></div>`;
+    return;
+  }
+  const it = session.queue[0], c = byId(it.id), s = c.srs[it.d], rev = session.revealed, now = Date.now();
+  const pct = Math.round(session.done / session.total * 100);
+  const note = c.note ? `<div class="note">${esc(c.note)}</div>` : '';
+  const frBlock = `<div class="lbl">Français</div><div class="fr-big">${esc(c.fr)}</div>${speakBtn(c.fr, 'fr-FR')}`;
+  const jpBlock = `<div class="lbl">Japonais</div><div class="jp">${esc(c.jp)}</div>${readingLines(c)}${speakBtn(c.jp, 'ja-JP')}`;
+  const jpOnly = `<div class="lbl">Japonais</div><div class="jp">${esc(c.jp)}</div>${speakBtn(c.jp, 'ja-JP')}`;
+  let face;
+  const pic = c.img && db.settings.images ? `<div class="pic">${esc(c.img)}</div>` : '';
+  const picQ = db.settings.imageFront ? pic : '', picA = db.settings.imageFront ? '' : pic;
+  if (it.d === 'a') face = picQ + frBlock + (rev ? `<hr>${picA}${jpBlock}${note}` : '');
+  else face = picQ + ((db.settings.readingFront || rev) ? jpBlock : jpOnly) + (rev ? `<hr>${picA}${frBlock}${note}` : '');
+  const chips = `<div class="chips"><span>${esc(themeText(c.theme))}</span><span>${TYPE_JA[c.type]} ${TYPE_LABEL[c.type]}</span><span>${it.d === 'a' ? 'FR → 日本語' : '日本語 → FR'}</span></div>`;
+  const foot = rev
+    ? `<div class="rates">${[['Encore', 'もう一度', 0, 'again'], ['Difficile', '難しい', 1, 'hard'], ['Bien', '良い', 2, 'good'], ['Facile', '簡単', 3, 'easy']].map(([l, j, q, k]) =>
+        `<button class="rate ${k}" data-act="rate" data-q="${q}"><span class="ja">${j}</span><b>${l}</b><small>${fmtInt(schedule(s, q, now).due - now)}</small></button>`).join('')}</div>`
+    : '<button class="primary" data-act="reveal" style="margin:0"><span class="ja">答えを見る</span>Afficher la réponse</button>';
+  el.innerHTML = `<div class="s-top"><button data-act="quit" aria-label="Quitter la session">✕</button><div class="bar"><i style="width:${pct}%"></i></div><div class="s-rem">${session.queue.length} restante${session.queue.length > 1 ? 's' : ''}</div></div>
+  <div class="s-body"><div class="s-card" ${rev ? '' : 'data-act="reveal"'}>${chips}${face}</div></div><div class="s-foot">${foot}</div>`;
+}
+function rate(q) {
+  if (!session || !session.revealed) return;
+  const it = session.queue.shift(), c = byId(it.id);
+  if (c) {
+    const ns = schedule(c.srs[it.d], q, Date.now());
+    c.srs[it.d] = ns; save();
+    if (ns.lrn) session.queue.splice(Math.min(session.queue.length, q === 0 ? 3 : 6), 0, it); else session.done++;
+  }
+  if (q === 0) session.again++;
+  session.revealed = false;
+  renderStudy();
+}
+
+/* ---------- Actions ---------- */
+function readForm(prefix) {
+  const g = (id) => ($('#' + prefix + id) ? $('#' + prefix + id).value.trim() : '');
+  return { fr: g('Fr'), jp: g('Jp'), reading: g('Rd') || g('Reading'), theme: g('Theme') || NO_THEME, type: g('Type') || 'autre', note: g('Note'), img: g('Img') };
+}
+function addOne() {
+  const o = readForm('a');
+  if (!o.fr || !o.jp) { toast('Le français et le japonais sont obligatoires'); return; }
+  if (needsHira(o.jp, o.reading)) { toast('Ajoute le hiragana : le japonais contient des kanji'); $('#aRd').focus(); return; }
+  db.ui.lastTheme = o.theme === NO_THEME ? '' : o.theme; db.ui.lastType = o.type;
+  const r = addMany([o]);
+  if (r.added) { toast('Ajouté : ' + o.fr); ['aFr', 'aJp', 'aRd', 'aNote', 'aImg'].forEach((id) => { $('#' + id).value = ''; }); $('#aFr').focus(); }
+  else toast('Ce mot existe déjà');
+}
+function splitLine(line, d) {
+  const out = []; let cur = '', q = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (q) { if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += ch; }
+    else if (ch === '"' && cur === '') q = true;
+    else if (ch === d) { out.push(cur.trim()); cur = ''; }
+    else cur += ch;
+  }
+  out.push(cur.trim());
+  return out;
+}
+const skipLine = (l) => { const t = l.trim(); return !t || t.startsWith('#') || t.startsWith('```') || /^sep=/i.test(t); };
+function detectDelim(lines) {
+  const first = lines.find((l) => !skipLine(l)) || '';
+  let best = ';', n = 0;
+  for (const d of [';', '\t', '|', ',']) { const k = first.split(d).length - 1; if (k > n) { best = d; n = k; } }
+  return best;
+}
+const isHeader = (p) => p.length > 1 && /^(francais|fr|フランス語)$/.test(norm(p[0]));
+function parseLines(text, defTheme, defType) {
+  const lines = text.replace(/^\ufeff/, '').split(/\r?\n/);
+  const d = detectDelim(lines), rows = [];
+  let first = true;
+  for (const raw of lines) {
+    if (skipLine(raw)) continue;
+    const p = splitLine(raw, d);
+    if (first) { first = false; if (isHeader(p)) continue; }
+    rows.push({ raw, frOnly: !!(p[0] && !p[1]), ok: !!(p[0] && p[1]),
+      item: { fr: p[0] || '', jp: p[1] || '', reading: p[2] || '', theme: p[3] || defTheme, type: normType(p[4], defType), note: p[5] || '', img: p[6] || '' } });
+  }
+  return rows;
+}
+function addBatch() {
+  const text = $('#bText').value;
+  if (!text.trim()) { toast('Colle une liste d\'abord'); return; }
+  if (text.includes('\ufffd')) { toast('Fichier mal encodé : enregistre-le en « CSV UTF-8 »'); return; }
+  const defTheme = $('#bTheme').value.trim(), defType = $('#bType').value;
+  const rows = parseLines(text, defTheme || NO_THEME, defType);
+  const seen = new Set(db.cards.map((c) => keyOf(c.fr, c.jp)));
+  const good = [], bad = []; let dup = 0, imgUp = 0;
+  for (const r of rows) {
+    if (!r.ok) { bad.push({ raw: r.raw, why: r.frOnly ? 'traduction manquante (utilise « Compléter avec une IA »)' : 'il manque le français ou le japonais' }); continue; }
+    const k = keyOf(r.item.fr, r.item.jp);
+    if (seen.has(k)) { dup++; if (r.item.img && setImg(r.item.fr, r.item.jp, r.item.img)) imgUp++; continue; }
+    if (needsHira(r.item.jp, r.item.reading)) { bad.push({ raw: r.raw, why: 'hiragana manquant (le japonais contient des kanji)' }); continue; }
+    seen.add(k); good.push(r.item);
+  }
+  const res = addMany(good);
+  toast(`${res.added} ajouté(s)${imgUp ? ', ' + imgUp + ' image(s) ajoutée(s) à des mots existants' : ''}${dup ? ', ' + dup + ' doublon(s)' : ''}${bad.length ? ', ' + bad.length + ' ligne(s) à corriger' : ''}`);
+  render();
+  if (bad.length) {
+    $('#bTheme').value = defTheme; $('#bType').value = defType;
+    $('#bText').value = bad.map((b) => b.raw).join('\n');
+    $('#bMsg').innerHTML = `<div class="warn"><b>${bad.length} ligne(s) à corriger</b>, laissée(s) dans la zone de texte. Corrige-les puis relance l'import :<ul>${bad.map((b) => `<li>${esc(b.raw)} : ${esc(b.why)}</li>`).join('')}</ul></div>`;
+  }
+}
+function buildPrompt(words, theme) {
+  return [
+    'Je veux apprendre le japonais. Pour chacun des mots français listés tout en bas, écris une ligne au format exact :',
+    '',
+    'français ; japonais ; hiragana ; thème ; type ; note ; image',
+    '',
+    'Règles :',
+    '- Une ligne par mot, dans le même ordre, sans titre, sans numéro et sans texte autour. Mets tout le résultat dans un seul bloc de code.',
+    '- français : recopie le mot tel qu\'il est écrit dans ma liste.',
+    '- japonais : l\'écriture usuelle (kanji, hiragana et katakana comme dans un texte courant). Pour un verbe, la forme du dictionnaire. Pour un nom, sans particule.',
+    '- hiragana : la lecture complète du mot, en hiragana uniquement. Laisse ce champ vide seulement si le japonais est déjà écrit uniquement en hiragana ou en katakana.',
+    theme ? '- thème : écris toujours « ' + theme + ' ».' : '- thème : un thème court en français (par exemple Nourriture, Voyage, Maison), identique pour les mots proches.',
+    '- type : exactement une de ces valeurs : nom, verbe, adjectif, adverbe, expression, autre.',
+    '- note : facultatif. Indique le sens retenu si le mot français a plusieurs sens, ou signale une traduction approximative. Sinon laisse vide.',
+    '- image : un seul emoji simple qui représente le mot, comme sur un imagier pour enfants. Laisse vide si aucun emoji ne convient clairement (mot abstrait, adverbe, expression).',
+    '- N\'écris jamais le caractère « ; » à l\'intérieur d\'un champ.',
+    '',
+    'Mots à traduire :'
+  ].concat(words).join('\n');
+}
+function copyText(text, okMsg, boxSel) {
+  const fallback = () => { const b = $(boxSel); if (b) { b.select(); try { document.execCommand('copy'); toast(okMsg); return; } catch (e) {} } toast('Sélectionne le texte et copie-le à la main'); };
+  try { navigator.clipboard.writeText(text).then(() => toast(okMsg)).catch(fallback); } catch (e) { fallback(); }
+}
+function aiPrompt() {
+  const lines = $('#bText').value.split(/\r?\n/).filter((l) => !skipLine(l));
+  const d = detectDelim(lines), words = [];
+  lines.forEach((l, i) => { const p = splitLine(l, d); if (i === 0 && isHeader(p)) return; if (p[0] && !p[1]) words.push(p[0]); });
+  if (!words.length) { toast('Écris d\'abord des mots français, un par ligne'); return; }
+  const prompt = buildPrompt(words, $('#bTheme').value.trim());
+  $('#bMsg').innerHTML = `<div class="warn"><b>${words.length} mot(s) à compléter.</b>
+    <ol style="margin:6px 0;padding-left:20px"><li>Copie la consigne ci-dessous.</li><li>Colle-la dans Claude, ChatGPT ou une autre IA.</li><li>Copie sa réponse (le bloc de code) et colle-la dans « Liste » à la place des mots français.</li><li>Relis quelques lignes, puis appuie sur « Importer la liste ».</li></ol>
+    <textarea id="aiBox" readonly style="min-height:150px">${esc(prompt)}</textarea>
+    <button class="sec" data-act="copyAi">Copier la consigne</button>
+    <p class="hint" style="margin:8px 0 0">Une IA peut se tromper sur un kanji ou une lecture : fais relire quelques lignes par ta correspondante (onglet Mots).</p></div>`;
+  copyText(prompt, 'Consigne copiée', '#aiBox');
+}
+const XLSX_MIME = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+const CRC_T = (() => { const t = []; for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = (u8) => { let c = 0xFFFFFFFF; for (let i = 0; i < u8.length; i++) c = CRC_T[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+function zipStore(files) {
+  const enc = new TextEncoder(), parts = [], central = []; let off = 0;
+  for (const f of files) {
+    const name = enc.encode(f.name), data = enc.encode(f.text), crc = crc32(data), size = data.length;
+    const lh = new DataView(new ArrayBuffer(30));
+    lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true); lh.setUint16(12, 0x21, true);
+    lh.setUint32(14, crc, true); lh.setUint32(18, size, true); lh.setUint32(22, size, true); lh.setUint16(26, name.length, true);
+    parts.push(new Uint8Array(lh.buffer), name, data);
+    const ch = new DataView(new ArrayBuffer(46));
+    ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint16(8, 0x0800, true); ch.setUint16(14, 0x21, true);
+    ch.setUint32(16, crc, true); ch.setUint32(20, size, true); ch.setUint32(24, size, true); ch.setUint16(28, name.length, true); ch.setUint32(42, off, true);
+    central.push(new Uint8Array(ch.buffer), name);
+    off += 30 + name.length + size;
+  }
+  const csize = central.reduce((a, p) => a + p.length, 0), end = new DataView(new ArrayBuffer(22));
+  end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true); end.setUint16(10, files.length, true); end.setUint32(12, csize, true); end.setUint32(16, off, true);
+  return new Blob(parts.concat(central, [new Uint8Array(end.buffer)]), { type: XLSX_MIME });
+}
+function makeXlsx(rows) {
+  const X = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
+  const xe = (v) => String(v).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const cell = (r, c, v, st) => (v === '' || v == null ? '' : `<c r="${String.fromCharCode(65 + c)}${r}" t="inlineStr"${st ? ' s="1"' : ''}><is><t xml:space="preserve">${xe(v)}</t></is></c>`);
+  const data = rows.map((row, i) => `<row r="${i + 1}">${row.map((v, c) => cell(i + 1, c, v, i === 0)).join('')}</row>`).join('');
+  const widths = [24, 24, 24, 22, 14, 30, 12];
+  const sheet = `${X}<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${widths.map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join('')}</cols><sheetData>${data}</sheetData></worksheet>`;
+  const styles = `${X}<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`;
+  return zipStore([
+    { name: '[Content_Types].xml', text: `${X}<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>` },
+    { name: '_rels/.rels', text: `${X}<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>` },
+    { name: 'xl/workbook.xml', text: `${X}<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Mots" sheetId="1" r:id="rId1"/></sheets></workbook>` },
+    { name: 'xl/_rels/workbook.xml.rels', text: `${X}<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>` },
+    { name: 'xl/styles.xml', text: styles },
+    { name: 'xl/worksheets/sheet1.xml', text: sheet }
+  ]);
+}
+function openExportImg() {
+  const n = db.cards.length, m = db.cards.filter((c) => !c.img).length;
+  if (!n) { toast('Aucun mot à exporter'); return; }
+  openModal(`<h1>${ja('画像用に書き出す')}Exporter pour ajouter des images</h1>
+  <p class="hint">${ja('画像のない単語も、いつでもあとから追加できます。単語をファイルに書き出し、「image」の列に絵文字を入れて、もう一度取り込みます。')}Les mots sans image ne sont jamais bloqués. Exporte la liste, remplis la colonne « image » dans Excel ou LibreOffice, puis réimporte le fichier.</p>
+  <ol style="margin:6px 0;padding-left:20px;font-size:14px"><li>Exporte la liste (Excel conseillé : aucun souci avec les accents et le japonais).</li><li>Dans la colonne « image », mets un emoji par mot (sous Windows : touche Windows + point), ou laisse vide si rien ne convient. Ne modifie pas les colonnes français et japonais.</li><li>Enregistre le fichier au même format (Excel .xlsx, ou CSV UTF-8).</li><li>Onglet Ajouter, « Plusieurs mots d'un coup », « Ou charger un fichier », puis « Importer la liste ».</li></ol>
+  <p class="hint">${ja('すでにある単語には画像だけが追加されます。重複はできません。')}Les mots déjà présents reçoivent leur image, sans doublon. Les autres colonnes et les images déjà présentes ne sont pas modifiées (pour les changer, utilise la fiche du mot).</p>
+  <div class="switch"><span>${ja('画像のない単語だけ')}Seulement les mots sans image (${m} sur ${n})</span><input id="xOnly" type="checkbox"></div>
+  <button class="primary" data-act="expXlsx">${ja('Excelで書き出す')}Exporter en Excel (.xlsx)</button>
+  <button class="sec" data-act="expCsv">${ja('CSVで書き出す')}Exporter en CSV</button>
+  <div id="xWrap" hidden><p class="hint" style="margin-top:10px">Si le téléchargement est bloqué, copie ce texte dans un fichier « mots.csv » encodé en UTF-8.</p>
+  <textarea id="xBox" readonly style="min-height:120px"></textarea><button class="sec" data-act="copyXbox">${ja('内容をコピー')}Copier le contenu</button></div>
+  <button class="link" data-act="closeModal">${ja('閉じる')}Fermer</button>`);
+}
+function exportImgFile(fmt) {
+  const only = $('#xOnly') && $('#xOnly').checked;
+  const cards = db.cards.filter((c) => !only || !c.img).sort((a, b) => a.theme.localeCompare(b.theme, 'fr') || a.created - b.created);
+  if (!cards.length) { toast('Tous les mots ont déjà une image'); return; }
+  const head = ['français', 'japonais', 'hiragana', 'thème', 'type', 'note', 'image'];
+  const rows = cards.map((c) => [c.fr, c.jp, c.reading, c.theme, c.type, c.note, c.img]);
+  if (fmt === 'xlsx') {
+    const ok = download('tango-mots-' + stamp() + '.xlsx', makeXlsx([head].concat(rows)), XLSX_MIME);
+    toast(ok ? cards.length + ' mot(s) exporté(s) en Excel' : 'Téléchargement impossible ici : utilise le CSV');
+  } else {
+    const cl = (v) => { const x = String(v || '').replace(/[\r\n\t]+/g, ' ').trim(); return /[;"]/.test(x) ? '"' + x.replace(/"/g, '""') + '"' : x; };
+    const text = [head.join(';')].concat(rows.map((r) => r.map(cl).join(';'))).join('\n');
+    $('#xBox').value = text; $('#xWrap').hidden = false;
+    download('tango-mots-' + stamp() + '.csv', '\ufeff' + text, 'text/csv');
+    toast(cards.length + ' mot(s) exporté(s) en CSV');
+  }
+}
+const IMG_BATCH = 80;
+function buildImgPrompt(cards) {
+  const cl = (x) => String(x).replace(/;/g, ',');
+  return [
+    'Je construis un imagier pour apprendre le japonais. Pour chacun des mots listés tout en bas, propose un emoji simple qui le représente, comme sur un imagier pour enfants. Réponds avec une ligne par mot, au format exact :',
+    '',
+    'français ; japonais ; image',
+    '',
+    'Règles :',
+    '- Une ligne par mot, dans le même ordre, sans titre, sans numéro et sans texte autour. Mets tout le résultat dans un seul bloc de code.',
+    '- français et japonais : recopie-les exactement comme dans ma liste, sans rien changer.',
+    '- image : un seul emoji, le plus évident et le plus simple à reconnaître (deux au maximum si un seul ne suffit vraiment pas).',
+    '- Si aucun emoji ne convient clairement (mot abstrait, adverbe, expression), laisse le champ image vide. N\'en invente pas un forcé.',
+    '- N\'écris jamais le caractère « ; » à l\'intérieur d\'un champ.',
+    '',
+    'Mots :'
+  ].concat(cards.map((c) => cl(c.fr) + ' ; ' + cl(c.jp))).join('\n');
+}
+function openImgPrompt() {
+  const shown = libFiltered(), pool = shown.filter((c) => !c.img);
+  if (!pool.length) { toast(shown.length ? 'Tous les mots affichés ont déjà une image' : 'Aucun mot à compléter'); return; }
+  const batch = pool.slice(0, IMG_BATCH), rest = pool.length - batch.length;
+  const prompt = buildImgPrompt(batch);
+  openModal(`<h1>${ja('画像をAIで補完')}Compléter les images</h1>
+  <p class="hint">${ja('いま一覧に表示されている単語のうち、画像のない単語が対象です。テーマで絞り込むと、少しずつ進められます。')}Cette consigne porte sur les mots affichés dans la liste qui n'ont pas encore d'image : <b>${batch.length}</b> mot${batch.length > 1 ? 's' : ''}${rest ? ' (il en restera ' + rest + ' pour le lot suivant)' : ''}. Tu peux filtrer par thème d'abord pour avancer par petits lots.</p>
+  <ol style="margin:6px 0;padding-left:20px"><li>Copie la consigne.</li><li>Colle-la dans Claude, ChatGPT ou une autre IA.</li><li>Copie sa réponse (le bloc de code) et colle-la plus bas.</li><li>Appuie sur « Appliquer ».</li></ol>
+  <textarea id="imgBox" readonly style="min-height:130px">${esc(prompt)}</textarea>
+  <button class="sec" data-act="copyImg">${ja('コピー')}Copier la consigne</button>
+  <label for="imgReply">${ja('AIの返答')}Réponse de l'IA</label>
+  <textarea id="imgReply" placeholder="pomme ; りんご ; 🍎"></textarea>
+  <button class="primary" data-act="applyImg">${ja('反映する')}Appliquer</button>
+  <button class="link" data-act="closeModal">${ja('閉じる')}Fermer</button>`);
+  copyText(prompt, 'Consigne copiée', '#imgBox');
+}
+function applyImgReply() {
+  const text = $('#imgReply').value;
+  if (!text.trim()) { toast('Colle d\'abord la réponse de l\'IA'); return; }
+  const lines = text.replace(/^\ufeff/, '').split(/\r?\n/).filter((l) => !skipLine(l));
+  const d = detectDelim(lines); let ok = 0, none = 0, unk = 0;
+  for (const l of lines) {
+    const p = splitLine(l, d);
+    if (isHeader(p)) continue;
+    if (p.length < 3) { unk++; continue; }
+    const v = cleanImg(p[2]); if (!v) { none++; continue; }
+    let c = db.cards.find((x) => keyOf(x.fr, x.jp) === keyOf(p[0], p[1]));
+    if (!c) { const m = db.cards.filter((x) => norm(x.fr) === norm(p[0])); if (m.length === 1) c = m[0]; }
+    if (!c) { unk++; continue; }
+    if (!c.img) { c.img = v; ok++; }
+  }
+  save(); closeModal(); render();
+  toast(`${ok} image(s) ajoutée(s)${none ? ', ' + none + ' mot(s) sans image' : ''}${unk ? ', ' + unk + ' ligne(s) non reconnue(s)' : ''}`);
+}
+function openThemeJa() {
+  const rows = themes().map((t, i) => `<label for="tj${i}">${esc(t)}</label><input id="tj${i}" data-theme="${esc(t)}" lang="ja" autocomplete="off" value="${esc(themeJa(t))}" placeholder="例：食べ物">`).join('');
+  openModal(`<h1>${ja('テーマの日本語名')}Noms japonais des thèmes</h1>
+  <p class="hint">${ja('空欄のテーマは、日本語名なしで表示されます。')}Les noms les plus courants sont déjà connus. Écris ici le nom japonais des autres thèmes. Un champ vide revient au réglage automatique.</p>${rows}
+  <button class="primary" data-act="saveThemeJa">${ja('保存')}Enregistrer</button>
+  <button class="link" data-act="closeModal">${ja('キャンセル')}Annuler</button>`);
+}
+function saveThemeJa() {
+  document.querySelectorAll('#modal input[data-theme]').forEach((inp) => {
+    const t = inp.dataset.theme, v = inp.value.trim();
+    if (v && v !== (THEME_JA[norm(t)] || '')) db.themeJa[t] = v; else delete db.themeJa[t];
+  });
+  save(); closeModal(); render(); toast('Enregistré');
+}
+function openEdit(id) {
+  const c = byId(id); if (!c) return;
+  openModal(`<h1>Modifier</h1><datalist id="themeList2">${themes().map((t) => `<option value="${esc(t)}">`).join('')}</datalist>
+  <label for="eFr">Français</label><input id="eFr" value="${esc(c.fr)}">
+  <label for="eJp">Japonais</label><input id="eJp" lang="ja" value="${esc(c.jp)}">
+  <label for="eRd">Hiragana</label><input id="eRd" lang="ja" value="${esc(c.reading)}">
+  <div class="row"><div><label for="eTheme">Thème</label><input id="eTheme" list="themeList2" value="${esc(c.theme)}"></div>
+  <div><label for="eType">Type</label><select id="eType">${typeOpts(c.type)}</select></div></div>
+  <label for="eNote">Note</label><input id="eNote" value="${esc(c.note)}">
+  <label for="eImg">${ja('画像（絵文字）')}Image (emoji)</label><input id="eImg" value="${esc(c.img)}" placeholder="ex : 🍎">
+  <p class="hint" style="margin:6px 0 0">${ja('スマホの絵文字キーボードで入力します（Windows：Windowsキー＋「.」）。')}Emoji du clavier du téléphone (Windows : touche Windows + point). Laisse vide s'il n'y a pas d'image évidente.</p>
+  <button class="primary" data-act="saveEdit" data-id="${esc(id)}">Enregistrer</button>
+  <button class="sec" data-act="resetProg" data-id="${esc(id)}">Remettre la progression à zéro</button>
+  <button class="sec danger" data-act="delCard" data-id="${esc(id)}">Supprimer ce mot</button>
+  <button class="link" data-act="closeModal">Annuler</button>`);
+}
+function saveEdit(id) {
+  const c = byId(id); if (!c) return;
+  const g = (x) => $('#' + x).value.trim();
+  if (!g('eFr') || !g('eJp')) { toast('Le français et le japonais sont obligatoires'); return; }
+  if (needsHira(g('eJp'), g('eRd'))) { toast('Ajoute le hiragana : le japonais contient des kanji'); return; }
+  Object.assign(c, { fr: g('eFr'), jp: g('eJp'), reading: g('eRd'), theme: g('eTheme') || NO_THEME, type: g('eType'), note: g('eNote'), img: cleanImg(g('eImg')) });
+  save(); closeModal(); render(); toast('Modifié');
+}
+const stamp = () => new Date().toISOString().slice(0, 10);
+function download(name, text, mime) {
+  try {
+    const u = URL.createObjectURL(new Blob([text], { type: mime }));
+    const a = document.createElement('a'); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(u), 3000); return true;
+  } catch (e) { return false; }
+}
+function exportJson() {
+  const text = JSON.stringify({ app: 'tango', version: 1, exported: new Date().toISOString(), settings: db.settings, themeJa: db.themeJa, cards: db.cards });
+  $('#exportBox').value = text; download('tango-sauvegarde-' + stamp() + '.json', text, 'application/json');
+  toast('Sauvegarde prête (fichier ou texte à copier)');
+}
+function exportCsv() {
+  const cl = (s) => { const x = String(s || '').replace(/[\r\n\t]+/g, ' ').trim(); return /[;"]/.test(x) ? '"' + x.replace(/"/g, '""') + '"' : x; };
+  const text = ['français;japonais;hiragana;thème;type;note;image'].concat(db.cards.map((c) => [c.fr, c.jp, c.reading, c.theme, c.type, c.note, c.img].map(cl).join(';'))).join('\n');
+  $('#exportBox').value = text; download('tango-mots-' + stamp() + '.csv', '\ufeff' + text, 'text/csv');
+  toast('Liste prête (fichier ou texte à copier)');
+}
+const TEMPLATE = 'français;japonais;hiragana;thème;type;note;image\n';
+function exportTemplate() {
+  const box = $('#exportBox'); if (box) box.value = TEMPLATE;
+  const w = $('#tplWrap'); if (w) { w.hidden = false; $('#tplBox').value = TEMPLATE; }
+  download('tango-modele-liste.csv', '\ufeff' + TEMPLATE, 'text/csv');
+  toast('Modèle prêt (fichier ou texte à copier)');
+}
+function copyExport() {
+  const box = $('#exportBox'); if (!box.value) { toast('Exporte d\'abord'); return; }
+  const fallback = () => { box.select(); try { document.execCommand('copy'); toast('Copié'); } catch (e) { toast('Sélectionne le texte et copie-le à la main'); } };
+  try { navigator.clipboard.writeText(box.value).then(() => toast('Copié')).catch(fallback); } catch (e) { fallback(); }
+}
+function importJson() {
+  const text = $('#impBox').value.trim();
+  if (!text) { toast('Colle une sauvegarde ou choisis un fichier'); return; }
+  let o; try { o = JSON.parse(text); } catch (e) { toast('Ce contenu n\'est pas une sauvegarde valide'); return; }
+  if (!o || !Array.isArray(o.cards)) { toast('Sauvegarde non reconnue'); return; }
+  let n = 0;
+  for (const raw of o.cards) {
+    const c = sanitizeCard(raw); if (!c) continue;
+    const i = db.cards.findIndex((x) => x.id === c.id);
+    if (i >= 0) db.cards[i] = c; else db.cards.push(c);
+    n++;
+  }
+  if (o.settings && typeof o.settings === 'object') Object.assign(db.settings, o.settings);
+  if (o.themeJa && typeof o.themeJa === 'object') for (const k in o.themeJa) if (typeof o.themeJa[k] === 'string' && o.themeJa[k].trim()) db.themeJa[k] = o.themeJa[k].trim();
+  save(); $('#impBox').value = ''; render(); toast(n + ' mot(s) restauré(s)');
+}
+async function xlsxToText(buf) {
+  const u8 = new Uint8Array(buf), dv = new DataView(buf), td = new TextDecoder();
+  let e = u8.length - 22;
+  while (e >= 0 && dv.getUint32(e, true) !== 0x06054b50) e--;
+  if (e < 0) throw new Error('zip');
+  const n = dv.getUint16(e + 10, true); let p = dv.getUint32(e + 16, true);
+  const files = {};
+  for (let k = 0; k < n; k++) {
+    const nl = dv.getUint16(p + 28, true), el = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true);
+    files[td.decode(u8.subarray(p + 46, p + 46 + nl))] = { method: dv.getUint16(p + 10, true), csize: dv.getUint32(p + 20, true), off: dv.getUint32(p + 42, true) };
+    p += 46 + nl + el + cl;
+  }
+  const read = async (name) => {
+    const f = files[name]; if (!f) return null;
+    const start = f.off + 30 + dv.getUint16(f.off + 26, true) + dv.getUint16(f.off + 28, true);
+    const data = u8.subarray(start, start + f.csize);
+    if (f.method === 0) return td.decode(data);
+    return new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text();
+  };
+  const xml = (t) => new DOMParser().parseFromString(t, 'application/xml');
+  const textOf = (el) => Array.from(el.getElementsByTagName('t')).map((t) => t.textContent).join('');
+  const shared = [];
+  const sst = await read('xl/sharedStrings.xml');
+  if (sst) Array.from(xml(sst).getElementsByTagName('si')).forEach((si) => shared.push(textOf(si)));
+  let sheetPath = 'xl/worksheets/sheet1.xml';
+  try {
+    const wb = xml(await read('xl/workbook.xml')), rels = xml(await read('xl/_rels/workbook.xml.rels'));
+    const first = wb.getElementsByTagName('sheet')[0];
+    const rid = first.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships', 'id') || first.getAttribute('r:id');
+    const rel = Array.from(rels.getElementsByTagName('Relationship')).find((r) => r.getAttribute('Id') === rid);
+    if (rel) { const t = rel.getAttribute('Target').replace(/^\//, ''); sheetPath = t.startsWith('xl/') ? t : 'xl/' + t; }
+  } catch (err) {}
+  const sheet = await read(sheetPath);
+  if (!sheet) throw new Error('feuille');
+  const out = [];
+  for (const row of Array.from(xml(sheet).getElementsByTagName('row'))) {
+    const cells = [];
+    for (const c of Array.from(row.getElementsByTagName('c'))) {
+      const ref = (c.getAttribute('r') || '').replace(/[0-9]/g, ''); let col = 0;
+      for (const ch of ref) col = col * 26 + (ch.charCodeAt(0) - 64);
+      const t = c.getAttribute('t'), v = c.getElementsByTagName('v')[0];
+      let val = '';
+      if (t === 's' && v) val = shared[Number(v.textContent)] || '';
+      else if (t === 'inlineStr') val = textOf(c);
+      else if (v) val = v.textContent;
+      cells[(col || cells.length + 1) - 1] = String(val).replace(/[\t\r\n]+/g, ' ').trim();
+    }
+    const line = Array.from(cells, (x) => x || '').join('\t');
+    if (line.replace(/\t/g, '').trim()) out.push(line);
+  }
+  return out.join('\n');
+}
+async function loadXlsx(f) {
+  try {
+    const t = await xlsxToText(await f.arrayBuffer());
+    const n = t.split('\n').filter((l) => l.trim()).length;
+    $('#bText').value = t;
+    toast(n > 1 ? 'Fichier Excel chargé : ' + (n - 1) + ' ligne(s)' : 'Le fichier ne contient aucun mot sous la ligne de titres');
+  } catch (err) { toast('Fichier Excel illisible : enregistre-le au format .xlsx ou en CSV UTF-8'); }
+}
+function readFileInto(input, target) {
+  const f = input.files && input.files[0]; if (!f) return;
+  const r = new FileReader(); r.onload = () => { const t = String(r.result).replace(/^\ufeff/, ''); $(target).value = t; toast(t.includes('\ufffd') ? 'Fichier mal encodé : enregistre-le en « CSV UTF-8 »' : 'Fichier chargé'); }; r.readAsText(f);
+}
+
+document.addEventListener('click', async (e) => {
+  const el = e.target.closest('[data-act]'); if (!el) return;
+  const act = el.dataset.act;
+  switch (act) {
+    case 'tab': tab = el.dataset.tab; window.scrollTo(0, 0); render(); break;
+    case 'dir': db.ui.dir = el.dataset.dir; save(); render(); break;
+    case 'toggleTheme': toggleIn(db.ui.themes, el.dataset.theme); save(); render(); break;
+    case 'toggleType': toggleIn(db.ui.types, el.dataset.type); save(); render(); break;
+    case 'clearFilters': db.ui.themes = []; db.ui.types = []; save(); render(); break;
+    case 'start': startSession(false); break;
+    case 'startAll': startSession(true); break;
+    case 'quit': endSession(); break;
+    case 'reveal': if (session) { session.revealed = true; renderStudy(); } break;
+    case 'rate': rate(Number(el.dataset.q)); break;
+    case 'speak': speak(el.dataset.text, el.dataset.lang); break;
+    case 'addOne': addOne(); break;
+    case 'addBatch': addBatch(); break;
+    case 'edit': openEdit(el.dataset.id); break;
+    case 'saveEdit': saveEdit(el.dataset.id); break;
+    case 'resetProg': { const c = byId(el.dataset.id); if (c) { c.srs = { a: srsNew(), b: srsNew() }; save(); closeModal(); render(); toast('Progression remise à zéro'); } break; }
+    case 'delCard': { const ok = await confirmDialog('Supprimer définitivement ce mot ?', 'Supprimer', 'この単語を完全に削除しますか？', '削除'); if (ok) { db.cards = db.cards.filter((c) => c.id !== el.dataset.id); save(); closeModal(); render(); toast('Supprimé'); } break; }
+    case 'closeModal': closeModal(); break;
+    case 'dlg-yes': closeModal(); if (confirmDialog.resolve) confirmDialog.resolve(true); break;
+    case 'dlg-no': closeModal(); if (confirmDialog.resolve) confirmDialog.resolve(false); break;
+    case 'starter': { const r = addMany(STARTER.map(([fr, jp, reading, theme, type]) => ({ fr, jp, reading, theme, type }))); render(); toast(r.added + ' mot(s) ajouté(s)'); break; }
+    case 'reset': { const ok = await confirmDialog('Effacer tous les mots et toute la progression ? Pense à faire une sauvegarde avant.', 'Tout effacer', 'すべての単語と学習記録を削除しますか？先にバックアップを取ってください。', 'すべて削除'); if (ok) { db = defaults(); save(); render(); toast('Tout est effacé'); } break; }
+    case 'exportJson': exportJson(); break;
+    case 'exportCsv': exportCsv(); break;
+    case 'exportTemplate': exportTemplate(); break;
+    case 'aiPrompt': aiPrompt(); break;
+    case 'imgPrompt': openImgPrompt(); break;
+    case 'exportImg': openExportImg(); break;
+    case 'expXlsx': exportImgFile('xlsx'); break;
+    case 'expCsv': exportImgFile('csv'); break;
+    case 'copyXbox': copyText($('#xBox').value, 'Copié', '#xBox'); break;
+    case 'themeJa': openThemeJa(); break;
+    case 'saveThemeJa': saveThemeJa(); break;
+    case 'copyImg': copyText($('#imgBox').value, 'Consigne copiée', '#imgBox'); break;
+    case 'applyImg': applyImgReply(); break;
+    case 'copyAi': copyText($('#aiBox').value, 'Consigne copiée', '#aiBox'); break;
+    case 'copyTpl': copyText($('#tplBox').value, 'Modèle copié', '#tplBox'); break;
+    case 'copyExport': copyExport(); break;
+    case 'importJson': importJson(); break;
+    case 'install': if (deferredInstall) { deferredInstall.prompt(); deferredInstall = null; render(); } break;
+  }
+});
+document.addEventListener('change', (e) => {
+  const id = e.target.id;
+  if (id === 'libTheme') { libState.theme = e.target.value; renderLibList(); }
+  else if (id === 'libType') { libState.type = e.target.value; renderLibList(); }
+  else if (id === 'sNew') { db.settings.newPerSession = Math.max(1, Math.min(200, num(e.target.value, 10))); save(); }
+  else if (id === 'sRomaji') { db.settings.romaji = e.target.checked; save(); }
+  else if (id === 'sRead') { db.settings.readingFront = e.target.checked; save(); }
+  else if (id === 'sImg') { db.settings.images = e.target.checked; save(); }
+  else if (id === 'sImgFront') { db.settings.imageFront = e.target.checked; save(); }
+  else if (id === 'bFile') { const f = e.target.files && e.target.files[0]; if (f && /\.xlsx$/i.test(f.name)) loadXlsx(f); else if (f && /\.xls$/i.test(f.name)) toast('Ancien format .xls non géré : enregistre en .xlsx ou en CSV UTF-8'); else readFileInto(e.target, '#bText'); }
+  else if (id === 'impFile') readFileInto(e.target, '#impBox');
+});
+document.addEventListener('input', (e) => { if (e.target.id === 'libQ') { libState.q = e.target.value; renderLibList(); } });
+document.addEventListener('keydown', (e) => {
+  if (!session || !$('#modal').hidden) return;
+  if (!session.revealed && (e.key === ' ' || e.key === 'Enter') && session.queue.length) { e.preventDefault(); session.revealed = true; renderStudy(); }
+  else if (session.revealed && /^[1-4]$/.test(e.key)) rate(Number(e.key) - 1);
+});
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredInstall = e; if (tab === 'more') render(); });
+
+/* ---------- Démarrage ---------- */
+render();
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && !isPreview) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+window.__tango = { get db() { return db; }, romaji, schedule };
+})();
+</script>
+</body>
+</html>
